@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_splash"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".login.SplashcreenActivity">
+
+    <ImageView
+        android:id="@+id/ivLogosplash1"
+        android:layout_width="198dp"
+        android:layout_height="154dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="30dp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/tvSplash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/aleo_bold_italic"
+        android:text="News24h"
+        android:textColor="#03A9F4"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+</LinearLayout>
