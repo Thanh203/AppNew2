@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bglogin2"
+    android:padding="30dp"
+    tools:context=".login.LoginActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dp"
+        android:text="Chào mừng đã trở lại "
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imBackS"
+        android:paddingLeft="10dp"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        />
+
+    <EditText
+        android:id="@+id/eduserL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:drawableLeft="@drawable/baseline_account_circle_24"
+        android:drawablePadding="4dp"
+        android:hint="Email "
+        android:padding="26dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.354" />
+
+    <EditText
+        android:layout_marginTop="30dp"
+        android:id="@+id/edpassL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eduserL"
+        android:textColorHint="@color/black"
+        android:textStyle="bold"
+        android:padding="26dp"
+        android:textColor="@color/black"
+        android:drawablePadding="4dp"
+        android:hint="mật khẩu"
+        android:textSize="20sp"
+        android:drawableLeft="@drawable/baseline_password_24"
+        android:inputType="textPassword"
+        />
+
+    <Button
+        android:id="@+id/btloginL"
+        android:layout_width="310dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginRight="16dp"
+        android:text="Đăng nhập"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edpassL" />
+    <TextView
+        android:id="@+id/tvregisterlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="đăng ký tại đây"
+        android:textSize="19sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/btloginL"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="25dp"
+        />
+    <ImageButton
+        android:id="@+id/imBackS"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="TODO" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
