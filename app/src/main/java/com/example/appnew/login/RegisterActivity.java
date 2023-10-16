@@ -78,7 +78,7 @@ public class RegisterActivity extends AppCompatActivity {
                                                         // Thêm dữ liệu thành công
                                                     })
                                                     .addOnFailureListener(e -> {
-                                                        // Lỗi: không thể thêm dữ liệu vào Firestore
+                                                        Toast.makeText(getApplicationContext(), "đăng nhập không thành công", Toast.LENGTH_SHORT).show();
                                                     });
 
                                             // Sign in success, update UI with the signed-in user's information

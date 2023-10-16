@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.appnew.R;
+import com.example.appnew.login.LoginActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -62,6 +63,11 @@ public class adminActivity extends AppCompatActivity implements NavigationView.O
                 loadFragment(new DanhMucAdminFragment());
                 mCurrentFragment = FRAGMENT_DANHMUC;
             }
+        } else if (id == R.id.nav_dangxuat_admin){
+            FirebaseAuth.getInstance().signOut();
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finish();
 
         } //else if (id == R.id.nav_tintuc_admin){
 //
@@ -70,13 +76,7 @@ public class adminActivity extends AppCompatActivity implements NavigationView.O
 //                mCurrentFragment = FRAGMENT_TINTUC;
 //            }
 //
-//        } else if (id == R.id.nav_dangxuat_admin){
-//
-//            FirebaseAuth.getInstance().signOut();
-//            Intent intent = new Intent(this, LoginActivity.class);
-//            startActivity(intent);
-//            finish();
-//
+
 //        } else if (id == R.id.nav_user_admin){
 //            if (mCurrentFragment != FRAGMENT_USER){
 //                loadFragment(thongTinTaiKhoanFragment);

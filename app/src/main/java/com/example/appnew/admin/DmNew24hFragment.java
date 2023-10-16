@@ -36,6 +36,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -255,13 +256,25 @@ public class DmNew24hFragment extends Fragment implements ItemCallback {
                 });
     }
     private void displayImage(String imageUrl) {
-        // Sử dụng thư viện hỗ trợ như Picasso hoặc Glide để tải và hiển thị ảnh lên ImageView
-        Picasso.get()
-                .load(imageUrl)
-                .into(img);
+        if (imageUrl != null && !imageUrl.isEmpty()) {
+            Picasso.get()
+                    .load(imageUrl)
+                    .into(img, new Callback() {
+                        @Override
+                        public void onSuccess() {
+                            // Image loaded successfully.
+                        }
+                        @Override
+                        public void onError(Exception e) {
+                            // Handle the error when the image fails to load.
+                            e.printStackTrace();
+                        }
+                    });
 
-        urlImg = imageUrl;
+            urlImg = imageUrl;
+        }
     }
+
     @Override
     public void onItemClick(String id) {
 

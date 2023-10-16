@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:paddingLeft="10dp"
+                android:paddingStart="10dp"
                 android:paddingTop="15dp"
                 app:layout_constraintTop_toBottomOf="@+id/ed_tendanhmuc_admin"
                 android:hint="Link danh muc"
@@ -54,10 +54,12 @@
                 android:id="@+id/image_view"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
+                android:src="@drawable/ic_launcher_background"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bt_hinhanh_admin"
-                android:layout_marginTop="16dp" />
+                android:layout_marginTop="16dp"
+                android:importantForAccessibility="no" />
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

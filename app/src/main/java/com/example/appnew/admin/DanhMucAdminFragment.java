@@ -20,24 +20,23 @@ public class DanhMucAdminFragment extends Fragment{
         View view = inflater.inflate(R.layout.fragment_danh_muc_admin, container, false);
         loadFragment( new DmNew24hFragment());
         BottomNavigationView bottomNavigationView = view.findViewById(R.id.bn_DanhMucAD);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        /*bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment selectedFragment = new DmNew24hFragment();
-
-//                switch (item.getItemId()) {
-//                    case R.id.action_news24h:
-//                        selectedFragment = new DmNew24hFragment();
-//                        break;
-//                    case R.id.action_vnexpress:
-//                        selectedFragment = new DmVnFragment();
-//                        break;
-//                }
-
+                Fragment selectedFragment = null;
+                switch (item.getItemId()) {
+                    case R.id.action_new24h:
+                        selectedFragment = new DmNew24hFragment();
+                        break;
+                    case R.id.action_vnexpress:
+                        selectedFragment = new DmVnFragment();
+                        break;
+                }
                 loadFragment(selectedFragment);
                 return true;
             }
-        });
+        });*/
 
         return view;
     }
