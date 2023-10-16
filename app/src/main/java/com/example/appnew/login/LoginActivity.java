@@ -98,6 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                             else
                             {
                                 // Đăng nhập không thành công
+                                // Dang Nhap Khong thanh cong App tu dong thoat.(Test)
                             }
                         });
             }
