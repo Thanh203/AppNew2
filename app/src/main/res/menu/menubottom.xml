@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Trang chủ"
+        android:id="@+id/mnTrangChu"
+        android:icon="@drawable/home"/>
+
+    <item android:title="Danh mục"
+        android:id="@+id/mnDanhMuc"
+        android:icon="@drawable/list"/>
+
+    <item android:title="Tin hot"
+        android:id="@+id/mnTinHot"
+        android:icon="@drawable/hotnews"/>
+
+    <item android:title="Menu"
+        android:id="@+id/mnMenu"
+        android:icon="@drawable/menu"/>
+</menu>

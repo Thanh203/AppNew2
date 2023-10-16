@@ -1,5 +1,59 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
+    <style name="Theme.AppNew" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/lavender</item>
+        <item name="colorPrimaryVariant">@color/lavender</item>
+        <item name="colorOnPrimary">#888888</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation" >@anim/slide_in</item>
+        <item name="android:windowExitAnimation" >@anim/slide_out</item>
+    </style>
+    <style name="DialogBottomAnimation">
+        <item name="android:windowEnterAnimation" >@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation" >@anim/slide_out_bottom</item>
+    </style>
+    <style name="ExpandedTitleStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">20sp</item>
+        <item name="android:lines">1</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="CollapsedTitleStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <!--        Dark mode-->
+    <style name="SCREEN">
+        <item name="android:background">#000</item>
+    </style>
+
+    <style name="TEXT">
+        <item name="android:textColor">#FFF</item>
+    </style>
+    <style name="MNBOTTOM">
+        <item name="android:background">#8F8F8F</item>
+    </style>
+    <style name="LAYOUTITEM">
+        <item name="android:background">#303030</item>
+        <item name="backgroundTint">@color/black</item>
+    </style>
+    <style name="ICONS">
+        <item name="android:backgroundTint">#00252525</item>
+    </style>
+  <!-- Base application theme. -->
     <style name="Base.Theme.AppNew" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
