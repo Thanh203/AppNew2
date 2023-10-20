@@ -8,7 +8,7 @@
     android:id="@+id/docbaotintuc"
     tools:context=".admin.DocTinTucActivity">
 
-    //
+    //Loi Hien thi tieu de
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
