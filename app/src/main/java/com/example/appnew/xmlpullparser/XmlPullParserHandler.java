@@ -1,10 +1,9 @@
-/*
 package com.example.appnew.xmlpullparser;
 
 import android.util.Log;
 import android.util.Xml;
 
-import com.example.appnew.entity.TinTuc;
+import com.example.appnew.enity.TinTuc;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -180,4 +179,3 @@ public class XmlPullParserHandler {
         return pubDate;
     }
 }
-*/
