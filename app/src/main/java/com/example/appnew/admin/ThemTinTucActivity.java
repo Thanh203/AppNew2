@@ -53,6 +53,7 @@ public class ThemTinTucActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_them_tin_tuc);
+
         AnhXa();
 
         btnAddNew.setOnClickListener(new View.OnClickListener() {
@@ -186,7 +187,7 @@ public class ThemTinTucActivity extends AppCompatActivity {
         edtTenBaiBao = findViewById(R.id.edt_TenBaiBao);
         edtTacGia = findViewById(R.id.edt_TacGia);
         edtNoiDung = findViewById(R.id.edt_NoiDung);
-        //edtDanhMuc = findViewById(R.id.edt_DanhMuc);
+        edtDanhMuc = findViewById(R.id.edt_DanhMuc);
         img = findViewById(R.id.img_TinTuc);
         spnDanhMuc = findViewById(R.id.categorySpinner);
 

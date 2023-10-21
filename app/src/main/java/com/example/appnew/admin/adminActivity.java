@@ -58,7 +58,6 @@ public class adminActivity extends AppCompatActivity implements NavigationView.O
             }
 
         } else if (id == R.id.nav_danhmuc_admin){
-
             if (mCurrentFragment != FRAGMENT_DANHMUC){
                 loadFragment(new DanhMucAdminFragment());
                 mCurrentFragment = FRAGMENT_DANHMUC;
@@ -69,13 +68,12 @@ public class adminActivity extends AppCompatActivity implements NavigationView.O
             startActivity(intent);
             finish();
 
-        } //else if (id == R.id.nav_tintuc_admin){
-//
-//            if (mCurrentFragment != FRAGMENT_TINTUC){
-////                loadFragment(new TinTucFragment());
-//                mCurrentFragment = FRAGMENT_TINTUC;
-//            }
-//
+        } else if (id == R.id.nav_tintuc_admin) {
+            if (mCurrentFragment != FRAGMENT_TINTUC) {
+                loadFragment(new TinTucFragment());
+                mCurrentFragment = FRAGMENT_TINTUC;
+            }
+        }
 
 //        } else if (id == R.id.nav_user_admin){
 //            if (mCurrentFragment != FRAGMENT_USER){

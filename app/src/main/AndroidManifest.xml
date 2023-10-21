@@ -34,6 +34,9 @@
             android:name=".login.LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".admin.ThemTinTucActivity"
+            android:exported="false" />
+        <activity
             android:name=".admin.adminActivity"
             android:exported="true" >
             <intent-filter>
