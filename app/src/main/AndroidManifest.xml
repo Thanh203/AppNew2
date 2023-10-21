@@ -13,8 +13,11 @@
         android:theme="@style/Theme.AppNew"
         tools:targetApi="31">
         <activity
-            android:name=".WebViewActivity"
+            android:name=".admin.DocTinTucActivity"
             android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"/>
         <activity
             android:name=".ViewFormActivity"
             android:exported="false" />
@@ -32,12 +35,7 @@
             android:exported="false" />
         <activity
             android:name=".admin.adminActivity"
-            android:exported="true">
-
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
