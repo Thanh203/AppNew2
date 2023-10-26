@@ -2,13 +2,16 @@ package com.example.appnew.fragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.appnew.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -62,5 +65,30 @@ public class DanhMucFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_danh_muc, container, false);
+    }
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        loadFragment(new DanhMuc24hFragment());
+        BottomNavigationView bottomNavigationView = view.findViewById(R.id.bn_DanhMuc);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@android.support.annotation.NonNull MenuItem item) {
+
+                if( item.getItemId() == R.id.action_new24h)
+                {
+                    loadFragment(new DanhMuc24hFragment());
+                }
+                else
+                    loadFragment(new DanhMucVnExpressFragment());
+
+                return true;
+            }
+        });
+    }
+    private void loadFragment(Fragment fragment) {
+        requireActivity().getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.danhMuc_fragment, fragment)
+                .commit();
     }
 }
