@@ -72,18 +72,18 @@ public class LoginActivity extends AppCompatActivity {
                                                 {
                                                     DocumentSnapshot document = userTask.getResult();
                                                     if (document != null && document.exists()) {
-                                                        //String role = document.getString("VaiTro");
+                                                        String role = document.getString("VaiTro");
                                                         // Kiểm tra và xử lý vai trò của người dùng
-                                                        //if ((role.equals("admin0"))||(role.equals("admin1"))||(role.equals("admin2")))
-                                                       // {
-                                                            //Intent i = new Intent(LoginActivity.this, adminActivity.class);
-                                                            //Bundle bundle = new Bundle();
-                                                            //bundle.putString("Permission", role);
-                                                            //i.putExtras(bundle);
-                                                            //startActivity(i);
-                                                            //finishAffinity();
-                                                        //}
-                                                        //else
+                                                        if ((role.equals("admin0"))||(role.equals("admin1"))||(role.equals("admin2")))
+                                                        {
+                                                            Intent i = new Intent(LoginActivity.this, adminActivity.class);
+                                                            Bundle bundle = new Bundle();
+                                                            bundle.putString("Permission", role);
+                                                            i.putExtras(bundle);
+                                                            startActivity(i);
+                                                            finishAffinity();
+                                                        }
+                                                        else
                                                         {
                                                             Intent i = new Intent(LoginActivity.this, MainActivity.class);
                                                             startActivity(i);
