@@ -14,10 +14,10 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import com.example.appnews.R;
-import com.example.appnews.adapter.DanhMucAdapter;
-import com.example.appnews.adapter.ItemCallback;
-import com.example.appnews.enity.DanhMuc;
+import com.example.appnew.R;
+import com.example.appnew.adapter.DanhMucAdapter;
+import com.example.appnew.adapter.ItemCallback;
+import com.example.appnew.enity.DanhMuc;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
