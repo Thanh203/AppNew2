@@ -1,4 +1,4 @@
-package com.example.appnew.admin;
+package com.example.appnew.xmlpullparser;
 
 import static android.content.ContentValues.TAG;
 

@@ -30,6 +30,7 @@ public class adminActivity extends AppCompatActivity implements NavigationView.O
     private  int mCurrentFragment = FRAGMENT_HOME;
     private DrawerLayout mDrawerLayout;
 
+    String permission;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +49,7 @@ public class adminActivity extends AppCompatActivity implements NavigationView.O
     }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//        String hasPermission = checkPermission();
+        String hasPermission = checkPermission();
         int id = item.getItemId();
         if (id == R.id.nav_trangchu_admin){
 
@@ -74,35 +75,41 @@ public class adminActivity extends AppCompatActivity implements NavigationView.O
                 mCurrentFragment = FRAGMENT_TINTUC;
             }
         }
+     else if (id == R.id.nav_dangxuat_admin){
 
-//        } else if (id == R.id.nav_user_admin){
-//            if (mCurrentFragment != FRAGMENT_USER){
-//                loadFragment(thongTinTaiKhoanFragment);
-//                mCurrentFragment = FRAGMENT_USER;
-//            }
-//        }else if (id == R.id.nav_phanquyen_admin){
-//            if(hasPermission.equals("admin0")){
-//                if (mCurrentFragment != FRAGMENT_PHANQUYEN){
-//                    loadFragment(new PhanQuyenFragment());
-//                    mCurrentFragment = FRAGMENT_PHANQUYEN;
-//                }
-//            }else {
-//                item.setEnabled(false);
-//                item.setIcon(R.drawable.baseline_lock_24);
-//                Toast.makeText(this, "Bạn không đủ quyền hạn", Toast.LENGTH_SHORT).show();
-//            }
-//        }else if (id == R.id.nav_pheduyet_admin){
-//            if(hasPermission.equals("admin1")){
-//                if (mCurrentFragment != FRAGMENT_PHEDUYET){
-//                    loadFragment(new PheDuyetFragment());
-//                    mCurrentFragment = FRAGMENT_PHEDUYET;
-//                }
-//            }else {
-//                item.setEnabled(false);
-//                item.setIcon(R.drawable.baseline_lock_24);
-//                Toast.makeText(this, "Bạn không đủ quyền hạn", Toast.LENGTH_SHORT).show();
-//            }
-//        }
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        finish();
+
+    } else if (id == R.id.nav_user_admin){
+        if (mCurrentFragment != FRAGMENT_USER){
+            //loadFragment(ThongTinTaiKhoanFragment);
+            mCurrentFragment = FRAGMENT_USER;
+        }
+    }else if (id == R.id.nav_phanquyen_admin){
+        if(hasPermission.equals("admin0")){
+            if (mCurrentFragment != FRAGMENT_PHANQUYEN){
+                loadFragment(new PhanQuyenFragment());
+                mCurrentFragment = FRAGMENT_PHANQUYEN;
+            }
+        }else {
+            item.setEnabled(false);
+            item.setIcon(R.drawable.baseline_lock_24);
+            Toast.makeText(this, "Bạn không đủ quyền hạn", Toast.LENGTH_SHORT).show();
+        }
+    }//else if (id == R.id.nav_pheduyet_admin){
+       // if(hasPermission.equals("admin1")){
+         //   if (mCurrentFragment != FRAGMENT_PHEDUYET){
+         //       loadFragment(new PheDuyetFragment());
+         //       mCurrentFragment = FRAGMENT_PHEDUYET;
+        //    }
+       // }else {
+         //   item.setEnabled(false);
+         //   item.setIcon(R.drawable.baseline_lock_24);
+          //  Toast.makeText(this, "Bạn không đủ quyền hạn", Toast.LENGTH_SHORT).show();
+        //}
+   // }
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -112,5 +119,15 @@ public class adminActivity extends AppCompatActivity implements NavigationView.O
         fmThanh.replace(R.id.fragment_container, fmNew);
         fmThanh.addToBackStack(null);
         fmThanh.commit();
+    }
+    private String checkPermission() {
+        Intent intent = getIntent();
+        if (intent != null) {
+            Bundle bundle = intent.getExtras();
+            if (bundle != null) {
+                permission = bundle.getString("Permission");
+            }
+        }
+        return permission;
     }
 }

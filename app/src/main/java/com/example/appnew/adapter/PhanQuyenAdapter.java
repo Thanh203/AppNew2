@@ -1,4 +1,4 @@
-package com.example.appnews.adapter;
+package com.example.appnew.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,8 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.appnews.R;
-import com.example.appnews.enity.TaiKhoan;
+import com.example.appnew.R;
+import com.example.appnew.enity.TaiKhoan;
 
 import java.util.List;
 
@@ -27,16 +27,16 @@ public class PhanQuyenAdapter extends RecyclerView.Adapter<PhanQuyenAdapter.myVi
 
     @NonNull
     @Override
-    public PhanQuyenAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
         View view = inflater.inflate(R.layout.item_phanquyen, parent, false);
-        return new PhanQuyenAdapter.myViewHolder(view);
+        return new myViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PhanQuyenAdapter.myViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
         TaiKhoan taiKhoan = list.get(position);
         holder.tvemail.setText(taiKhoan.getEmail());
         holder.tvquyen.setText(taiKhoan.getQuyen());

@@ -1,14 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center"
     tools:context=".admin.ThongTinTaiKhoanFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/im_Avatar_admin"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/avatar_defaut"/>
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/edt_HoVaTen_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        android:hint="Họ và tên"/>
+
+    <EditText
+        android:id="@+id/edt_Email_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Email"/>
+    <EditText
+        android:id="@+id/edt_ChuVu_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Chức vụ"/>
+    <EditText
+        android:id="@+id/edt_CCCD_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="CCCD"/>
+    <EditText
+        android:id="@+id/edt_SDT_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Số điện thoại"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giới tính"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_gravity="center"/>
+        <RadioGroup
+            android:id="@+id/genderRadioGroup_admin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="15dp">
+
+            <RadioButton
+                android:id="@+id/maleRadioButton_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nam"
+                android:textSize="20sp"/>
+
+            <RadioButton
+                android:id="@+id/femaleRadioButton_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nữ"
+                android:textSize="20sp"/>
+        </RadioGroup>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/birthdayButton_admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chọn ngày sinh" />
+
+        <EditText
+            android:id="@+id/edt_Day_admin"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="5dp"
+            android:hint="dd"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_gravity="center_vertical"/>
+        <EditText
+            android:id="@+id/edt_Month_admin"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:hint="mm"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_gravity="center_vertical"/>
+        <EditText
+            android:id="@+id/edt_Year_admin"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:hint="yyyy"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_CapNhap_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Cập nhập"/>
+
+</LinearLayout>

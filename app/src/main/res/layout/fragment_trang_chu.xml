@@ -5,10 +5,60 @@
     android:layout_height="match_parent"
     tools:context=".fragment.TrangChuFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="#F3F3F3">
+
+        <TextView
+            android:layout_width="150dp"
+            android:gravity="center"
+            android:layout_height="50dp"
+            android:text="APP NEWS"
+            android:paddingLeft="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/lavender"
+            android:textStyle="bold"
+            />
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/bt_Search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="45dp"
+            android:src="@drawable/baseline_search_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btAvatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/baseline_brightness_4_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_Tintuc"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        android:paddingBottom="55dp"/>
 
 </FrameLayout>
