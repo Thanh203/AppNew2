@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#03A9F4"
     android:id="@+id/docbaotintuc"
-    tools:context=".admin.DocTinTucActivity">
+    tools:context=".DocTinTucActivity">
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"

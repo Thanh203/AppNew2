@@ -1,4 +1,4 @@
-package com.example.appnew.admin;
+package com.example.appnew;
 
 import static android.content.ContentValues.TAG;
 
@@ -42,12 +42,12 @@ import java.util.Locale;
 public class DocTinTucActivity extends AppCompatActivity {
 
     ImageButton imBackDocBaoC;
-    TextView tvTacGiaC,tvNoidungC,tvTenbaibaoC,tvNgayDangC;
+    TextView tvTacGiaC, tvNoidungC, tvTenbaibaoC, tvNgayDangC;
     CollapsingToolbarLayout collapsingToolbarLayout;
     EditText edCommentC;
     ImageButton imgSendCommentC;
 
-    ImageView imBaoC,imUserC;
+    ImageView imBaoC, imUserC;
     String idTinTuc;
     String linkImg;
 
@@ -59,6 +59,7 @@ public class DocTinTucActivity extends AppCompatActivity {
     //CommentAdapter commentAdapter;
     //List<Comment> listComment;
     FirebaseDatabase firebaseDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,11 +79,9 @@ public class DocTinTucActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         firestore = FirebaseFirestore.getInstance();
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        if (firebaseUser != null){
+        if (firebaseUser != null) {
             getdatauser();
-        }
-        else
-        {
+        } else {
             int resourceId = R.drawable.account;
             imUserC.setImageResource(resourceId);
         }
@@ -93,7 +92,7 @@ public class DocTinTucActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
-                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_right);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
             }
         });
 
@@ -158,34 +157,28 @@ public class DocTinTucActivity extends AppCompatActivity {
     }
 
    /* private void rvComment() {
-
         RcvComment.setLayoutManager(new LinearLayoutManager(this));
-
         DatabaseReference commentRef = firebaseDatabase.getReference("Comment").child(idTinTuc);
         commentRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 listComment = new ArrayList<>();
                 for (DataSnapshot snap:dataSnapshot.getChildren()) {
-
                     Comment comment = snap.getValue(Comment.class);
                     listComment.add(comment) ;
-
                 }
-
                 commentAdapter = new CommentAdapter(getApplicationContext(),listComment);
                 RcvComment.setAdapter(commentAdapter);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }*/
 
     private void showMessage(String message) {
 
-        Toast.makeText(this,message,Toast.LENGTH_LONG).show();
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 
     }
 

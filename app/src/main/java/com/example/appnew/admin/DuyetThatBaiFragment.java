@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.example.appnew.DocTinTucActivity;
 import com.example.appnew.R;
 import com.example.appnew.adapter.HienThiTinTucAdminAdapter;
 import com.example.appnew.adapter.ItemCallback;

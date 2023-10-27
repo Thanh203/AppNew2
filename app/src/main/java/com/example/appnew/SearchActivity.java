@@ -1,4 +1,4 @@
-package com.example.appnew.xmlpullparser;
+package com.example.appnew;
 
 import androidx.appcompat.app.AppCompatActivity;
 

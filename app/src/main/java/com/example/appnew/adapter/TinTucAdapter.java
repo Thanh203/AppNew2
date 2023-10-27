@@ -11,8 +11,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.appnews.R;
-import com.example.appnews.enity.TinTuc;
+import com.example.appnew.adapter.ItemCallback;
+import com.example.appnew.enity.TinTuc;
+import com.example.appnew.R;
+import com.example.appnew.enity.TinTuc;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

@@ -9,8 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.appnews.R;
-import com.example.appnews.enity.TaiKhoan;
+import com.example.appnew.R;
+import com.example.appnew.adapter.ItemCallback;
+import com.example.appnew.enity.TaiKhoan;
 
 import java.util.List;
 
