@@ -31,6 +31,7 @@ import com.bumptech.glide.Glide;
 import com.example.appnew.FootlballActivity;
 import com.example.appnew.R;
 import com.example.appnew.ThoiTietActivity;
+import com.example.appnew.ThongTinTaiKhoanActivity;
 import com.example.appnew.ViewFormActivity;
 import com.example.appnew.enity.TaiKhoan;
 import com.example.appnew.login.LoginActivity;
@@ -200,13 +201,13 @@ public class MenuFragment extends Fragment {
             }
         });*/
 
-        /*tvTTTK.setOnClickListener(new View.OnClickListener() {
+        tvTTTK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), ThongTinTaiKhoanActivity.class);
                 startActivity(intent);
             }
-        });*/
+        });
 
 
         tvDangkybieumauC.setOnClickListener(new View.OnClickListener() {

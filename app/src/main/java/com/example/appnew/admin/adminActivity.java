@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.appnew.R;
 import com.example.appnew.login.LoginActivity;
+import com.example.appnew.admin.ThongTinTaiKhoanFragment;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -75,11 +76,12 @@ public class adminActivity extends AppCompatActivity implements NavigationView.O
             }
         }
 
-//        } else if (id == R.id.nav_user_admin){
-//            if (mCurrentFragment != FRAGMENT_USER){
-//                loadFragment(thongTinTaiKhoanFragment);
-//                mCurrentFragment = FRAGMENT_USER;
-//            }
+         else if (id == R.id.nav_user_admin) {
+            if (mCurrentFragment != FRAGMENT_USER) {
+                loadFragment(new ThongTinTaiKhoanFragment());
+                mCurrentFragment = FRAGMENT_USER;
+            }
+        }
 //        }else if (id == R.id.nav_phanquyen_admin){
 //            if(hasPermission.equals("admin0")){
 //                if (mCurrentFragment != FRAGMENT_PHANQUYEN){
