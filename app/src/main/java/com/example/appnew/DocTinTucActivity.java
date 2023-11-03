@@ -19,6 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.appnew.R;
+import com.example.appnew.adapter.CommentAdapter;
+import com.example.appnew.enity.Comment;
 import com.example.appnew.enity.TaiKhoan;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -56,8 +58,8 @@ public class DocTinTucActivity extends AppCompatActivity {
     FirebaseFirestore firestore;
     FirebaseUser firebaseUser;
 
-    //CommentAdapter commentAdapter;
-    //List<Comment> listComment;
+    CommentAdapter commentAdapter;
+    List<Comment> listComment;
     FirebaseDatabase firebaseDatabase;
 
     @Override
@@ -105,8 +107,6 @@ public class DocTinTucActivity extends AppCompatActivity {
         imgSendCommentC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
                 FirebaseFirestore.getInstance()
                         .collection("users")
@@ -123,15 +123,12 @@ public class DocTinTucActivity extends AppCompatActivity {
                                     taiKhoan.setAnh(document.getString("Anh"));
 
                                     DatabaseReference commentReference = firebaseDatabase.getReference("Comment").child(idTinTuc).push();
-
                                     String comment_content = edCommentC.getText().toString();
-
-
                                     String uid = currentUser.getUid();
                                     String uname = taiKhoan.getHoTen();
                                     String uimg = taiKhoan.getAnh();
 
-                                    /*Comment comment = new Comment(comment_content, uid, uimg, uname);
+                                    Comment comment = new Comment(comment_content, uid, uimg, uname);
                                     commentReference.setValue(comment).addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {
@@ -144,7 +141,7 @@ public class DocTinTucActivity extends AppCompatActivity {
                                         public void onFailure(@NonNull Exception e) {
                                             showMessage("fail to add comment : "+e.getMessage());
                                         }
-                                    });*/
+                                    });
                                 } else {
                                     Log.d(TAG, "Document does not exist");
                                 }
@@ -156,7 +153,7 @@ public class DocTinTucActivity extends AppCompatActivity {
         });
     }
 
-   /* private void rvComment() {
+    private void rvComment() {
         RcvComment.setLayoutManager(new LinearLayoutManager(this));
         DatabaseReference commentRef = firebaseDatabase.getReference("Comment").child(idTinTuc);
         commentRef.addValueEventListener(new ValueEventListener() {
@@ -174,7 +171,7 @@ public class DocTinTucActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
-    }*/
+    }
 
     private void showMessage(String message) {
 

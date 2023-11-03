@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.example.appnew.R;
 import com.example.appnew.adapter.ItemCallback;
+import com.example.appnew.adapter.PhanQuyenAdapter;
 import com.example.appnew.enity.TaiKhoan;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -82,7 +83,7 @@ public class PhanQuyenFragment extends Fragment implements ItemCallback {
     }
 
     List<TaiKhoan> lstsTaiKhoan;
-    com.example.appnews.adapter.PhanQuyenAdapter adapter;
+    PhanQuyenAdapter adapter;
     RecyclerView rvTaiKhoan;
     Dialog dialog;
     EditText edtEmail;
@@ -98,7 +99,7 @@ public class PhanQuyenFragment extends Fragment implements ItemCallback {
         lstsTaiKhoan = new ArrayList<>();
         dialog = new Dialog(getActivity());
 
-        adapter = new com.example.appnews.adapter.PhanQuyenAdapter(lstsTaiKhoan, getActivity(), this);
+        adapter = new PhanQuyenAdapter(lstsTaiKhoan, getActivity(), this);
         rvTaiKhoan.setLayoutManager(new StaggeredGridLayoutManager(1, LinearLayout.VERTICAL));
         rvTaiKhoan.setAdapter(adapter);
 

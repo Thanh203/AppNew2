@@ -18,6 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.example.appnew.adapter.TinTucAdapter;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ public class SearchActivity extends AppCompatActivity implements ItemCallback {
 
     SearchView searchView;
     List<TinTuc> lstTinTuc;
-    com.example.appnews.adapter.TinTucAdapter tinTucAdapter;
+    TinTucAdapter tinTucAdapter;
     RecyclerView rvSearch;
     String link;
     @Override
@@ -51,7 +52,7 @@ public class SearchActivity extends AppCompatActivity implements ItemCallback {
                 return false;
             }
         });
-        tinTucAdapter = new com.example.appnews.adapter.TinTucAdapter(lstTinTuc, this, link, this);
+        tinTucAdapter = new TinTucAdapter(lstTinTuc, this, link, this);
         rvSearch.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
         rvSearch.setAdapter(tinTucAdapter);
     }

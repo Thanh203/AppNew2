@@ -102,7 +102,7 @@ public class LichSuApdapter extends RecyclerView.Adapter<LichSuApdapter.myViewHo
         return list.size();
     }
 
-    public class myViewHolder extends RecyclerView.ViewHolder {
+    public static class myViewHolder extends RecyclerView.ViewHolder {
         ImageView img;
         TextView tvTenBaiBao, tvDate;
         LinearLayout wrapperC;

@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 public class LichSuActivity extends AppCompatActivity implements ItemCallback{
     RecyclerView rvLichSu;
@@ -78,12 +79,12 @@ public class LichSuActivity extends AppCompatActivity implements ItemCallback{
                                 if (document.exists()) {
                                     TinTuc tinTuc = new TinTuc();
                                     tinTuc.setIDBaiBao(document.getId());
-                                    tinTuc.setTenBaiBao(document.get("TenBaiBao").toString());
-                                    tinTuc.setNoiDung(document.get("NoiDung").toString());
-                                    tinTuc.setAnh(document.get("AnhBia").toString());
-                                    tinTuc.setTacGia(document.get("TacGia").toString());
+                                    tinTuc.setTenBaiBao(Objects.requireNonNull(document.get("TenBaiBao")).toString());
+                                    tinTuc.setNoiDung(Objects.requireNonNull(document.get("NoiDung")).toString());
+                                    tinTuc.setAnh(Objects.requireNonNull(document.get("AnhBia")).toString());
+                                    tinTuc.setTacGia(Objects.requireNonNull(document.get("TacGia")).toString());
 //                                  tinTuc.setLinkBaiBao(document.get("LinkTinTuc").toString());
-                                    tinTuc.setIDDanhMuc(document.get("DanhMuc").toString());
+                                    tinTuc.setIDDanhMuc(Objects.requireNonNull(document.get("DanhMuc")).toString());
 
                                     Timestamp timestamp = document.getTimestamp("NgayDang");
                                     if (timestamp != null) {

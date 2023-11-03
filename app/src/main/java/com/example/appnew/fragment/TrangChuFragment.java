@@ -20,9 +20,12 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.appnew.DocTinTucActivity;
+import com.example.appnew.FootlballActivity;
 import com.example.appnew.R;
 import com.example.appnew.SearchActivity;
+import com.example.appnew.adapter.GoiDanhMucAdapter;
 import com.example.appnew.adapter.ItemCallback;
+import com.example.appnew.adapter.TinTucAdapter;
 import com.example.appnew.enity.DanhMuc;
 import com.example.appnew.enity.TinTuc;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -102,15 +105,14 @@ public class TrangChuFragment extends Fragment implements ItemCallback {
 //    ArrayList<String> lsDanhMuc;
     List<DanhMuc> lstDanhMuc;
     RecyclerView rvDanhMuc;
-    com.example.appnews.adapter.GoiDanhMucAdapter adapter;
+    GoiDanhMucAdapter adapter;
     FirebaseFirestore firestore;
     List<TinTuc> lstTinTuc;
-    com.example.appnews.adapter.TinTucAdapter tinTucAdapter;
+    TinTucAdapter tinTucAdapter;
     RecyclerView rvTinTuc;
     String tenDanhMuc;
     private long luotXem;
     ImageButton btSearch;
-
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -222,7 +224,7 @@ public class TrangChuFragment extends Fragment implements ItemCallback {
                 startActivity(intent);
             }
         });
-        tinTucAdapter = new com.example.appnews.adapter.TinTucAdapter(lstTinTuc, (Context) activity, link, this);
+        tinTucAdapter = new TinTucAdapter(lstTinTuc, (Context) activity, link, this);
         rvTinTuc.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
         rvTinTuc.setAdapter(tinTucAdapter);
     }

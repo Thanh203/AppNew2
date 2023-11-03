@@ -29,6 +29,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.appnew.FootlballActivity;
+import com.example.appnew.LichSuActivity;
 import com.example.appnew.R;
 import com.example.appnew.ThoiTietActivity;
 import com.example.appnew.ViewFormActivity;
@@ -192,13 +193,13 @@ public class MenuFragment extends Fragment {
                 startActivity(intent);
             }
         });*/
-        /*tvLichSu.setOnClickListener(new View.OnClickListener() {
+        tvLichSu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(activity, LichSuActivity.class);
                 startActivity(intent);
             }
-        });*/
+        });
 
         /*tvTTTK.setOnClickListener(new View.OnClickListener() {
             @Override

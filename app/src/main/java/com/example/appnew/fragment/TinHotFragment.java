@@ -122,7 +122,7 @@ public class TinHotFragment extends Fragment {
         return true;
     }
     public void openLink(int i){
-        Toast.makeText(requireActivity().getApplicationContext(), "click", Toast.LENGTH_SHORT).show();
+        Toast.makeText(requireActivity().getApplicationContext(), ItemLists.get(i).getLinkBaiBao(), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getActivity(), WebViewActivity.class);
         intent.putExtra("linknews", ItemLists.get(i).getLinkBaiBao());
         startActivity(intent);
