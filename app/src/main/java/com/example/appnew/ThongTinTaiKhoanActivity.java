@@ -1,29 +1,23 @@
-package com.example.appnew.admin;
+package com.example.appnew;
 
-import static android.app.Activity.RESULT_OK;
 import static android.content.ContentValues.TAG;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.provider.MediaStore;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
-import com.example.appnew.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -41,46 +35,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ThongTinTaiKhoanFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class ThongTinTaiKhoanFragment extends Fragment {
+public class ThongTinTaiKhoanActivity extends AppCompatActivity {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public ThongTinTaiKhoanFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ThongTinTaiKhoanFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ThongTinTaiKhoanFragment newInstance(String param1, String param2) {
-        ThongTinTaiKhoanFragment fragment = new ThongTinTaiKhoanFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    private View mView;
-    private EditText edtHoVaTen, edtEmail, edtDay, edtMonth, edtYear, edtNgheNghiep, edtCCCD, edtSDT;
+    private EditText edtHoVaTen, edtEmail, edtDay, edtMonth, edtYear, edtNgheNghiep,edtCCCD, edtSDT;
     private ImageView imgAvatar;
     private Button btnCapNhap;
     private RadioGroup genderRadioGroup;
@@ -91,32 +48,20 @@ public class ThongTinTaiKhoanFragment extends Fragment {
     private static final int PICK_IMAGE_REQUEST = 1;
     private String urlImg;
     private Uri selectedImageUri;
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        mView = inflater.inflate(R.layout.fragment_thong_tin_tai_khoan, container, false);
+        setContentView(R.layout.activity_thong_tin_tai_khoan);
 
         AnhXa();
-
 
         genderRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
-                if (checkedId == R.id.maleRadioButton_admin) {
+                if (checkedId == R.id.maleRadioButton) {
                     // Nút lựa chọn "Nam" được chọn
                     gioiTinh = "Nam";
-                } else if (checkedId == R.id.femaleRadioButton_admin) {
+                } else if (checkedId == R.id.femaleRadioButton) {
                     // Nút lựa chọn "Nữ" được chọn
                     gioiTinh = "Nữ";
                 }
@@ -133,7 +78,7 @@ public class ThongTinTaiKhoanFragment extends Fragment {
                 int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
 
                 // Khởi tạo DatePickerDialog
-                DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(),
+                DatePickerDialog datePickerDialog = new DatePickerDialog(ThongTinTaiKhoanActivity.this,
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
@@ -151,7 +96,7 @@ public class ThongTinTaiKhoanFragment extends Fragment {
             }
         });
 
-        getDataUserAdmin();
+        getDataUser();
 
         btnCapNhap.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -166,18 +111,17 @@ public class ThongTinTaiKhoanFragment extends Fragment {
                 updatedData.put("NgaySinh", ngaySinh);
                 updatedData.put("Anh", urlImg);
 
-
                 FirebaseFirestore.getInstance()
                         .collection("users")
                         .document(currentUser.getUid())
                         .update(updatedData)
                         .addOnSuccessListener(aVoid -> {
                             // Thực hiện thành công
-                            Toast.makeText(getActivity(), "Cập nhập thông tin tài khoản thành công", Toast.LENGTH_SHORT).show();
+                            Log.d(TAG, "Document updated successfully");
                         })
                         .addOnFailureListener(e -> {
                             // Xử lý lỗi
-                            Toast.makeText(getActivity(), "Cập nhập thông tin tài khoản không thành công", Toast.LENGTH_SHORT).show();
+                            Log.e(TAG, "Error updating document", e);
                         });
 
             }
@@ -190,11 +134,9 @@ public class ThongTinTaiKhoanFragment extends Fragment {
                 startActivityForResult(intent, PICK_IMAGE_REQUEST);
             }
         });
-
-        return mView;
     }
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null) {
@@ -238,7 +180,7 @@ public class ThongTinTaiKhoanFragment extends Fragment {
 
         urlImg = imageUrl;
     }
-    private void getDataUserAdmin() {
+    private void getDataUser() {
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         FirebaseFirestore.getInstance()
                 .collection("users")
@@ -256,43 +198,39 @@ public class ThongTinTaiKhoanFragment extends Fragment {
                             edtSDT.setText(document.getString("SDT"));
                             gioiTinh = document.getString("GioiTinh");
 
-                            if (gioiTinh != null){
-                                if (Objects.equals(gioiTinh, "Nam")){
-                                    maleRadioButton.setChecked(true);
-                                }else if (Objects.equals(gioiTinh, "Nữ")){
-                                    femaleRadioButton.setChecked(true);
-                                }
+                            if (Objects.equals(gioiTinh, "Nam")){
+                                maleRadioButton.setChecked(true);
+                            }else if (Objects.equals(gioiTinh, "Nữ")){
+                                femaleRadioButton.setChecked(true);
                             }
 
                             ngaySinh = document.getString("NgaySinh");
 
-                            if (ngaySinh != null){
-                                SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-                                try {
-                                    Date date = dateFormat.parse(ngaySinh);
+                            try {
+                                Date date = dateFormat.parse(ngaySinh);
 
-                                    SimpleDateFormat dayFormat = new SimpleDateFormat("dd");
-                                    SimpleDateFormat monthFormat = new SimpleDateFormat("MM");
-                                    SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy");
+                                SimpleDateFormat dayFormat = new SimpleDateFormat("dd");
+                                SimpleDateFormat monthFormat = new SimpleDateFormat("MM");
+                                SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy");
 
-                                    String day = dayFormat.format(date);
-                                    String month = monthFormat.format(date);
-                                    String year = yearFormat.format(date);
+                                String day = dayFormat.format(date);
+                                String month = monthFormat.format(date);
+                                String year = yearFormat.format(date);
 
-                                    edtDay.setText(day);
-                                    edtMonth.setText(month);
-                                    edtYear.setText(year);
+                                edtDay.setText(day);
+                                edtMonth.setText(month);
+                                edtYear.setText(year);
 
-                                } catch (ParseException e) {
-                                    e.printStackTrace();
-                                }
+                            } catch (ParseException e) {
+                                e.printStackTrace();
                             }
+
                             linkAnh = document.getString("Anh");
                             Picasso.get()
                                     .load(linkAnh)
                                     .into(imgAvatar);
-
 
                         } else {
                             Log.d(TAG, "Document does not exist");
@@ -305,28 +243,25 @@ public class ThongTinTaiKhoanFragment extends Fragment {
 
     private void AnhXa(){
 
-        imgAvatar = mView.findViewById(R.id.im_Avatar_admin);
-        edtHoVaTen = mView.findViewById(R.id.edt_HoVaTen_admin);
-        edtEmail = mView.findViewById(R.id.edt_Email_admin);
-        edtNgheNghiep = mView.findViewById(R.id.edt_ChuVu_admin);
-        edtCCCD = mView.findViewById(R.id.edt_CCCD_admin);
-        edtSDT = mView.findViewById(R.id.edt_SDT_admin);
+        imgAvatar = findViewById(R.id.im_Avatar);
+        edtHoVaTen = findViewById(R.id.edt_HoVaTen);
+        edtEmail = findViewById(R.id.edt_Email);
+        edtNgheNghiep = findViewById(R.id.edt_NgheNghiep);
+        edtCCCD = findViewById(R.id.edt_CCCD);
+        edtSDT = findViewById(R.id.edt_SDT);
 
-
-        btnCapNhap = mView.findViewById(R.id.btn_CapNhap_admin);
-
+        btnCapNhap = findViewById(R.id.btn_CapNhap);
 
         edtEmail.setEnabled(false);
 
-        genderRadioGroup = mView.findViewById(R.id.genderRadioGroup_admin);
-        maleRadioButton = mView.findViewById(R.id.maleRadioButton_admin);
-        femaleRadioButton = mView.findViewById(R.id.femaleRadioButton_admin);
+        genderRadioGroup = findViewById(R.id.genderRadioGroup);
+        maleRadioButton = findViewById(R.id.maleRadioButton);
+        femaleRadioButton = findViewById(R.id.femaleRadioButton);
 
-        birthdayButton = mView.findViewById(R.id.birthdayButton_admin);
-        edtDay = mView.findViewById(R.id.edt_Day_admin);
-        edtMonth = mView.findViewById(R.id.edt_Month_admin);
-        edtYear = mView.findViewById(R.id.edt_Year_admin);
+        birthdayButton = findViewById(R.id.birthdayButton);
+        edtDay = findViewById(R.id.edt_Day);
+        edtMonth = findViewById(R.id.edt_Month);
+        edtYear = findViewById(R.id.edt_Year);
 
     }
-
 }
