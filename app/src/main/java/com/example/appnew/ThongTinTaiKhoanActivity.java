@@ -111,6 +111,7 @@ public class ThongTinTaiKhoanActivity extends AppCompatActivity {
                 updatedData.put("NgaySinh", ngaySinh);
                 updatedData.put("Anh", urlImg);
 
+
                 FirebaseFirestore.getInstance()
                         .collection("users")
                         .document(currentUser.getUid())

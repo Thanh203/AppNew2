@@ -28,6 +28,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.appnew.CalenderActivity;
 import com.example.appnew.FootlballActivity;
 import com.example.appnew.LichSuActivity;
 import com.example.appnew.R;
@@ -187,13 +188,13 @@ public class MenuFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        /*vietnameseCalendarTextView.setOnClickListener(new View.OnClickListener() {
+        vietnameseCalendarTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity, CalendarActivity.class);
+                Intent intent = new Intent(activity, CalenderActivity.class);
                 startActivity(intent);
             }
-        });*/
+        });
         tvLichSu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -205,7 +206,7 @@ public class MenuFragment extends Fragment {
         tvTTTK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), ThongTinTaiKhoanActivity.class);
+                Intent intent = new Intent(activity, ThongTinTaiKhoanActivity.class);
                 startActivity(intent);
             }
         });
