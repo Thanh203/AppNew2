@@ -57,6 +57,9 @@
             android:name=".ViewFormActivity"
             android:exported="false" />
         <activity
+            android:name=".WebViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".login.WelcomeActivity"
             android:exported="false" />
         <activity
