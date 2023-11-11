@@ -96,18 +96,18 @@ public class adminActivity extends AppCompatActivity implements NavigationView.O
             Toast.makeText(this, "Bạn không đủ quyền hạn", Toast.LENGTH_SHORT).show();
         }
     }
-//        }else if (id == R.id.nav_pheduyet_admin){
-//            if(hasPermission.equals("admin1")){
-//                if (mCurrentFragment != FRAGMENT_PHEDUYET){
-//                    loadFragment(new PheDuyetFragment());
-//                    mCurrentFragment = FRAGMENT_PHEDUYET;
-//                }
-//            }else {
-//                item.setEnabled(false);
-//                item.setIcon(R.drawable.baseline_lock_24);
-//                Toast.makeText(this, "Bạn không đủ quyền hạn", Toast.LENGTH_SHORT).show();
-//            }
-//        }
+        else if (id == R.id.nav_pheduyet_admin){
+            if(hasPermission.equals("admin0")){
+                if (mCurrentFragment != FRAGMENT_PHEDUYET){
+                    loadFragment(new PheDuyetFragment());
+                    mCurrentFragment = FRAGMENT_PHEDUYET;
+                }
+            }else {
+                item.setEnabled(false);
+                item.setIcon(R.drawable.baseline_lock_24);
+                Toast.makeText(this, "Bạn không đủ quyền hạn", Toast.LENGTH_SHORT).show();
+            }
+        }
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }

@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.appnew.R;
+import com.example.appnew.admin.UpdateTinTucActivity;
 import com.example.appnew.enity.TinTuc;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -84,7 +85,7 @@ public class HienThiTinTucAdminAdapter extends RecyclerView.Adapter<HienThiTinTu
                         });
             }
         });
-        /* holder.btnUpdate.setOnClickListener(new View.OnClickListener() {
+         holder.btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view1) {
                 Intent intent = new Intent(view1.getContext(), UpdateTinTucActivity.class);
@@ -93,7 +94,7 @@ public class HienThiTinTucAdminAdapter extends RecyclerView.Adapter<HienThiTinTu
                 intent.putExtras(bundle);
                 view1.getContext().startActivity(intent);
             }
-        });*/
+        });
         holder.itemView.setOnClickListener(view -> itemCallback.onItemClick("IDBaiBao:" + String.valueOf(tinTuc.getIDBaiBao())));
     }
 

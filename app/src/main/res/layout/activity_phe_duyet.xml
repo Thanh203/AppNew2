@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#03A9F4"
+    android:id="@+id/docbaotintucPD"
+    tools:context=".admin.PheDuyetActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayoutPD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/Theme.AppNew">
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="#03A9F4"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:expandedTitleTextAppearance="@style/ExpandedTitleStyle"
+            app:collapsedTitleTextAppearance="@style/CollapsedTitleStyle"
+            app:expandedTitleGravity="center_vertical"
+            android:background="#03A9F4"
+            android:id="@+id/collapsingPD">
+
+            <ImageButton
+                android:id="@+id/imgback_tintuc_PD"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@null"
+                android:contentDescription="todo"
+                android:src="@drawable/baseline_arrow_back_white" />
+
+            <TextView
+                android:id="@+id/tv_tenbaibaoPD"
+                android:layout_width="215dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="60dp"
+                android:textAlignment="center"
+                android:paddingLeft="10dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/archivo_medium"
+                android:text="ten bai bao"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/img_tintucPD"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center|end"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="40dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/logo"
+                app:layout_collapseMode="parallax" />
+
+            <TextView
+                android:id="@+id/tv_tacgiaPD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="tac gia"
+                android:textColor="@color/white"
+                android:layout_gravity="end"
+                android:textSize="15sp"
+                android:layout_marginTop="210dp"
+                android:layout_marginEnd="20dp"
+                />
+            <TextView
+                android:id="@+id/tv_ngaydangPD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ngay dang"
+                android:textColor="@color/white"
+                android:layout_gravity="end"
+                android:layout_marginTop="230dp"
+                android:layout_marginRight="20dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="245dp"
+                android:layout_marginBottom="10dp">
+                <Button
+                    android:id="@+id/btn_PheDuyet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#009688"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Phê duyệt"/>
+                <Button
+                    android:id="@+id/btn_KoPheDuyet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#B30202"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Không phê duyệt"/>
+            </LinearLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:padding="20dp">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.733"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_noidungPD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Noi dung"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
