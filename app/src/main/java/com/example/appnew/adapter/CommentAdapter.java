@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.appnew.enity.Comment;
 import com.example.appnew.R;
-import com.example.appnew.enity.Comment;
 
 import java.util.Calendar;
 import java.util.List;

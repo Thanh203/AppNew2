@@ -155,7 +155,7 @@ public class ThemTinTucActivity extends AppCompatActivity {
     private void insertData(){
 
         String selectedCategory = spnDanhMuc.getSelectedItem().toString();
-        String trangThai = "Chưa duyệt";
+        String trangThai = "Đã duyệt";
         Map<String, Object> map = new HashMap<>();
         map.put("TenBaiBao", edtTenBaiBao.getText().toString());
         map.put("TacGia", edtTacGia.getText().toString());

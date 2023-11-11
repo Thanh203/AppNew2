@@ -102,7 +102,7 @@ public class DocTinTucActivity extends AppCompatActivity {
         Bundle bundle = intent.getExtras();
         idTinTuc = bundle.getString("IDTinTuc");
         getDataTinTuc();
-        //rvComment();
+        rvComment();
 
         imgSendCommentC.setOnClickListener(new View.OnClickListener() {
             @Override
