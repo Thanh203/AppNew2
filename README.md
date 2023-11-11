@@ -41,4 +41,3 @@
 | 4  | + Xem lịch | + Quản lý thông tin cá nhân | + Tìm kiếm |
 | 5  | + Chế độ NightMode | + Đăng ký biểu mẫu |  + Lịch sử |
 | 6  | + Đọc báo của VnExpress (API) | + ... | + ... |
-| 7  | + Thay đổi kích thước chữ | + ... | + ... |
