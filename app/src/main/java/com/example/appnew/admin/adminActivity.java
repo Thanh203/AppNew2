@@ -31,6 +31,7 @@ public class adminActivity extends AppCompatActivity implements NavigationView.O
     private  int mCurrentFragment = FRAGMENT_HOME;
     private DrawerLayout mDrawerLayout;
 
+    String permission;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +50,7 @@ public class adminActivity extends AppCompatActivity implements NavigationView.O
     }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//        String hasPermission = checkPermission();
+        String hasPermission = checkPermission();
         int id = item.getItemId();
         if (id == R.id.nav_trangchu_admin){
 
@@ -82,17 +83,19 @@ public class adminActivity extends AppCompatActivity implements NavigationView.O
                 mCurrentFragment = FRAGMENT_USER;
             }
         }
-//        }else if (id == R.id.nav_phanquyen_admin){
-//            if(hasPermission.equals("admin0")){
-//                if (mCurrentFragment != FRAGMENT_PHANQUYEN){
-//                    loadFragment(new PhanQuyenFragment());
-//                    mCurrentFragment = FRAGMENT_PHANQUYEN;
-//                }
-//            }else {
-//                item.setEnabled(false);
-//                item.setIcon(R.drawable.baseline_lock_24);
-//                Toast.makeText(this, "Bạn không đủ quyền hạn", Toast.LENGTH_SHORT).show();
-//            }
+        else if (id == R.id.nav_phanquyen_admin)
+    {
+        if (hasPermission.equals("admin0")) {
+            if (mCurrentFragment != FRAGMENT_PHANQUYEN) {
+                loadFragment(new PhanQuyenFragment());
+                mCurrentFragment = FRAGMENT_PHANQUYEN;
+            }
+        } else {
+            item.setEnabled(false);
+            item.setIcon(R.drawable.baseline_lock_24);
+            Toast.makeText(this, "Bạn không đủ quyền hạn", Toast.LENGTH_SHORT).show();
+        }
+    }
 //        }else if (id == R.id.nav_pheduyet_admin){
 //            if(hasPermission.equals("admin1")){
 //                if (mCurrentFragment != FRAGMENT_PHEDUYET){
@@ -107,6 +110,27 @@ public class adminActivity extends AppCompatActivity implements NavigationView.O
 //        }
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+
+    private String checkPermission() {
+        Intent intent = getIntent();
+        if (intent != null) {
+            Bundle bundle = intent.getExtras();
+            if (bundle != null) {
+                permission = bundle.getString("Permission");
+            }
+        }
+        return permission;
+    }
+    @Override
+    public void onBackPressed() {
+
+        if (mDrawerLayout.isDrawerOpen(GravityCompat.START)){
+            mDrawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
     }
     void loadFragment(Fragment fmNew)
     {
