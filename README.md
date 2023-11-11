@@ -23,7 +23,7 @@
 | + Quản lý danh mục | + Chế độ NightMode | + Quản lý thông tin cá nhân |
 | + Quản lý tài khoản | + Thay đổi kích thước chữ | + Tìm kiếm |
 | + Phê duyệt tin tức | + Xem thời tiết (API) | + Phân quyền |
-| + Đăng nhập/ đăng ký | + Xem bóng đá (API) | + Đọc báo của VnExpress (API) |
+| + Đăng nhập/ đăng ký | + Xem bóng đá (API) | + Đọc báo của VnExpress (RSS) |
 | + Lịch sử | + Xem lịch | |
 
 ## Công nghệ:
@@ -35,7 +35,7 @@
 ## Phân công công việc:
 | STT | [ Lê Minh Thanh ](https://github.com/Thanh203) | [ Nguyễn Hoàng Anh Quốc ](https://github.com/AqGzs)| [ Đặng Trần Hoàng Phú Quý ](https://github.com/DTHPQuy) |
 |-----------|--|------|-------|
-| 1  | + Đọc báo của VnExpress (API) | + Quản lý tài khoản | + Quản lý danh mục |
+| 1  | + Đọc báo của VnExpress (RSS) | + Quản lý tài khoản | + Quản lý danh mục |
 | 2  | + Xem thời tiết (API) | + Đăng nhập/Đăng ký | + Quản lý tin tức |
 | 3  | + Xem bóng đá (API) | + Phân quyền | + Phê duyệt tin tức |
 | 4  | + Xem lịch | + Quản lý thông tin cá nhân | + Tìm kiếm |
