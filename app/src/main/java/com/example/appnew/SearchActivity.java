@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.appnew.R;
@@ -33,10 +35,22 @@ public class SearchActivity extends AppCompatActivity implements ItemCallback {
     TinTucAdapter tinTucAdapter;
     RecyclerView rvSearch;
     String link;
+    ImageButton imBackDocBaoC;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+        imBackDocBaoC = findViewById(R.id.imgback_tintuc);
+        imBackDocBaoC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
+            }
+        });
+
         searchView = findViewById(R.id.searchtrangtru);
         rvSearch = findViewById(R.id.rvsearch);
         lstTinTuc = new ArrayList<>();

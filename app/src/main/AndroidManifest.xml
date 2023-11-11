@@ -30,6 +30,9 @@
         android:theme="@style/Theme.AppNew"
         tools:targetApi="31">
         <activity
+            android:name=".admin.PheDuyetActivity"
+            android:exported="false" />
+        <activity
             android:name=".CalenderActivity"
             android:exported="false" />
         <activity
@@ -46,13 +49,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".ViewFormActivity"
             android:exported="false" />
@@ -60,11 +57,20 @@
             android:name=".WebViewActivity"
             android:exported="false" />
         <activity
+            android:name=".admin.UpdateTinTucActivity"
+            android:exported="false" />
+        <activity
             android:name=".login.WelcomeActivity"
             android:exported="false" />
         <activity
             android:name=".login.SplashcreenActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".login.RegisterActivity"
             android:exported="false" />

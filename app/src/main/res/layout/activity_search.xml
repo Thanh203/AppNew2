@@ -6,9 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".SearchActivity">
 
+    <ImageButton
+        android:id="@+id/imgback_tintuc"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/black"
+        android:contentDescription="todo"
+        android:src="@drawable/baseline_arrow_back_white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchtrangtru"
-        android:layout_width="match_parent"
+        android:layout_width="800px"
         android:layout_height="25dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="18dp"
